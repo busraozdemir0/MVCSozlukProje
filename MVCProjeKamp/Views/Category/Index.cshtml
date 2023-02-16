@@ -2,26 +2,40 @@
 @{
     Layout = null;
 }
+<link href="~/Content/bootstrap.min.css" rel="stylesheet"/>
 
 <h3>MVC Kampı Tablo Örneği - Kategori</h3>
 <br />
-<table>
+<table class="table table-hover">
     <tr>
         <th>Kategori ID</th>
         <th>Kategori Adı</th>
         <th>Açıklama</th>
         <th>Durum</th>
+        <th>Güncelle</th>
     </tr>
     <tr>
         <td>1</td>
         <td>Eğitim</td>
         <td>Açiklamaa</td>
         <td>True</td>
+        <td><button class="btn btn-success">Güncelle</button></td>
     </tr>
     <tr>
         <td>2</td>
         <td>Spor</td>
         <td>Açiklamaa</td>
         <td>True</td>
+        <td><button class="btn btn-success">Güncelle</button></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Yazılım</td>
+        <td>Açiklamaa</td>
+        <td>True</td>
+        <td><button class="btn btn-success">Güncelle</button></td>
     </tr>
 </table>
+<button class="btn btn-info">Yeni Kategori</button>
+<button class="btn btn-Warning">Kategori Listesi</button>
+<button class="btn btn-danger">Kategori Açıklamaları</button>
