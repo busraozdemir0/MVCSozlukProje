@@ -23,6 +23,11 @@ namespace DataAccessLayer.Concrete.Repositories
             context.SaveChanges();  
         }
 
+        public T Get(Expression<Func<T, bool>> filter)
+        {
+            return _object.SingleOrDefault(filter); //sadece bir değer göndermesi için kullanılan metot
+        }
+
         public void Insert(T p)
         {
             _object.Add(p);
