@@ -44,13 +44,16 @@
                             <th style="width: 1%" hidden>
                                 #
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 13%">
                                 Başlık Adı
                             </th>
-                            <th style="width: 20%">
+                            <th style="width: 10%">
+                                Durum
+                            </th>
+                            <th style="width: 13%">
                                 Yazar Görsel
                             </th>
-                            <th style="width: 20%; left: 50%">
+                            <th style="width: 13%">
                                 Yazar Adı
                             </th>
                             <th style="width: 8%" class="text-center">
@@ -63,27 +66,27 @@
                     <tbody>
                         @foreach (var item in Model)
                         {
-                            if (item.Category.CategoryName == "eğitim")
+                            if (item.Category.CategoryName == "eğitim" || item.Category.CategoryName == "Eğitim")
                             {
                                 color = "badge badge-success";
                             }
-                            if (item.Category.CategoryName == "dizi/film")
+                            if (item.Category.CategoryName == "dizi/film" || item.Category.CategoryName == "Dizi/Film")
                             {
                                 color = "badge badge-warning";
                             }
-                            if (item.Category.CategoryName == "yazılım")
+                            if (item.Category.CategoryName == "yazılım" || item.Category.CategoryName == "Yazılım")
                             {
                                 color = "badge badge-info";
                             }
-                            if (item.Category.CategoryName == "spor")
+                            if (item.Category.CategoryName == "spor" || item.Category.CategoryName == "Spor")
                             {
                                 color = "badge badge-secondary";
                             }
-                            if (item.Category.CategoryName == "seyahat")
+                            if (item.Category.CategoryName == "seyahat" || item.Category.CategoryName == "Seyahat")
                             {
                                 color = "badge badge-dark";
                             }
-                            if (item.Category.CategoryName == "genel")
+                            if (item.Category.CategoryName == "genel" || item.Category.CategoryName == "Genel")
                             {
                                 color = "badge badge-light";
                             }
@@ -99,6 +102,25 @@
                                     <small>
                                         @(((DateTime)item.HeadingDate).ToString("dd-MMM-yyyy"))
                                     </small>
+                                </td>
+                                <td>
+                                    @{
+                                        string renk;
+                                        string yazi;
+                                        if (item.HeadingStatus == true)
+                                        {
+                                            yazi = "Pasif Yap";
+                                            renk = "text-success";
+                                            <p class="@renk">Aktif</p>
+
+                                        }
+                                        else
+                                        {
+                                            yazi = "Aktif Yap";
+                                            renk = "text-danger";
+                                            <p class="@renk">Pasif</p>
+                                        }
+                                    }
                                 </td>
                                 <td>
                                     <ul class="list-inline">
@@ -117,20 +139,20 @@
                                     <span class="@color">@item.Category.CategoryName</span>
                                 </td>
                                 <td class="project-actions text-right">
-                                    <a class="btn btn-primary btn-sm" href="#">
+                                    <a class="btn btn-primary btn-sm" href="/Content/ContentByHeading/@item.HeadingID">
                                         <i class="fas fa-folder">
                                         </i>
                                         Yazılar
                                     </a>
-                                    <a class="btn btn-info btn-sm" href="#">
+                                    <a class="btn btn-info btn-sm" href="/Heading/EditHeading/@item.HeadingID">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Düzenle
                                     </a>
-                                    <a class="btn btn-danger btn-sm" href="#">
+                                    <a class="btn btn-danger btn-sm" href="/Heading/DeleteHeading/@item.HeadingID">
                                         <i class="fas fa-trash">
                                         </i>
-                                        Sil
+                                        @yazi
                                     </a>
                                 </td>
                             </tr>
@@ -144,4 +166,4 @@
     </section>
 </body>
 </html>
-
+<a href="/Heading/AddHeading/" class="btn btn-primary">Yeni Başlık Girişi</a>
