@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,9 @@ namespace MVCProjeKamp.Controllers
         ContactValidator cv = new ContactValidator();
         public ActionResult Index()
         {
+            Context context = new Context();
+            var contactCount = context.Contacts.Count().ToString();
+            ViewBag.iletisimSayisi = contactCount;
             var contactValues = cm.GetList();
             return View(contactValues);
         }
