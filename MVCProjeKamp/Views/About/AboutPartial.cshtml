@@ -2,8 +2,8 @@
     Yeni Hakkımızda Yazı Girişi
 </button>
 
-<div class="modal" id="Modal1">
-    <div class="modal-dialog">
+<div class="modal fade" id="Modal1" role="dialog">
+    <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 class="modal-title">Hakkımızda Metin Girişi</h2>
@@ -22,7 +22,8 @@
                     <label>Hakkımda Görsel 1</label>
                     <input type="text" name="AboutImage2" class="form-control" />
                     <br />
-                    <buton class="btn btn-info">Kaydet</buton>
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                    <button type="submit" class="btn btn-info">Kaydet</button>
                 </div>
             </form>
         </div>
