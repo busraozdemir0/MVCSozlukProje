@@ -2,6 +2,7 @@
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +86,11 @@ namespace MVCProjeKamp.Controllers
                 hm.HeadingDelete(headingValue);
             }
             return RedirectToAction("MyHeading");
+        }
+        public ActionResult AllHeading(int p=1)
+        {
+            var headings = hm.GetList().ToPagedList(p, 4);
+            return View(headings);
         }
     }
 }
