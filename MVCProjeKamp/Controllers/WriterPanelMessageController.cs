@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Concrete;
 using BusinessLayer.ValidationRules;
+using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
@@ -18,12 +19,14 @@ namespace MVCProjeKamp.Controllers
         // GET: WriterPanelMessage
         public ActionResult Inbox()
         {
-            var messageListIn = mm.GetListInbox();
+            string p = (string)Session["WriterMail"];
+            var messageListIn = mm.GetListInbox(p);
             return View(messageListIn);
         }
         public ActionResult Sendbox()
         {
-            var messageListSend = mm.GetListSendbox();
+            string p = (string)Session["WriterMail"];
+            var messageListSend = mm.GetListSendbox(p);
             return View(messageListSend);
         }
         public PartialViewResult MessageListMenuPartial()
@@ -49,10 +52,11 @@ namespace MVCProjeKamp.Controllers
         [HttpPost]
         public ActionResult NewMessage(Message p)
         {
+            string sender = (string)Session["WriterMail"];
             ValidationResult results = messageValidator.Validate(p);
             if (results.IsValid)
             {
-                p.SenderMail = "gizem@gmail.com";
+                p.SenderMail = sender;
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
                 mm.MessageAdd(p);
                 return RedirectToAction("Sendbox");

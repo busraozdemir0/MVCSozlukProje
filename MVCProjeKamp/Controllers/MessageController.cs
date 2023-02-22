@@ -19,17 +19,17 @@ namespace MVCProjeKamp.Controllers
         MessageManager mm = new MessageManager(new EfMessageDal());
         // GET: Message
         [Authorize]
-        public ActionResult Inbox()
+        public ActionResult Inbox(string p)
         {
             Context context=new Context();
             var inboxCount = context.Messages.Count().ToString();
             ViewBag.gelenMesajSayisi = inboxCount;
-            var messageListIn = mm.GetListInbox();
+            var messageListIn = mm.GetListInbox(p);
             return View(messageListIn);
         }
-        public ActionResult Sendbox()
+        public ActionResult Sendbox(string p)
         {
-            var messageListSend = mm.GetListSendbox();
+            var messageListSend = mm.GetListSendbox(p);
             return View(messageListSend);
         }
         public ActionResult GetInboxMessageDetails(int id)
