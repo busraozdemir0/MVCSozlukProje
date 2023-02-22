@@ -60,23 +60,31 @@ to get the desired effect
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
-                             with font-awesome or any other icon font library -->
-                        @if(User.IsInRole("B"))
+         with font-awesome or any other icon font library -->
+                        @if (User.IsInRole("B"))
                         {
-                        <li class="nav-item has-treeview">
-                            <a href="/AdminCategory/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-tachometer-alt"></i>
-                                <p>
-                                    Kategoriler
-                                </p>
-                            </a>
-                        </li>
+                            <li class="nav-item has-treeview">
+                                <a href="/AdminCategory/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                                    <p>
+                                        Kategoriler
+                                    </p>
+                                </a>
+                            </li>
                         }
                         <li class="nav-item">
                             <a href="/Heading/Index/" class="nav-link">
                                 <i class="nav-icon fas fa-th"></i>
                                 <p>
                                     Başlıklar
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Content/GetAllContent/" class="nav-link">
+                                <i class="nav-icon fas fa-book-reader"></i>
+                                <p>
+                                    Yazılar
                                 </p>
                             </a>
                         </li>
@@ -158,7 +166,7 @@ to get the desired effect
                             </a>
                         </li>
                         <li class="nav-item has-treeview">
-                            <a href="/Default/Headings/" class="nav-link">
+                            <a href="/Home/HomePage/" class="nav-link">
                                 <i class="nav-icon fas fa-door-closed"></i>
                                 <p>
                                     Siteye Git
