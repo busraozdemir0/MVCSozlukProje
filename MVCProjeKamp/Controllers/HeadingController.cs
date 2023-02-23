@@ -83,5 +83,11 @@ namespace MVCProjeKamp.Controllers
             }
             return RedirectToAction("Index");
         }
+
+        public ActionResult HeadingReport()
+        {
+            var headingValues = hm.GetList();
+            return View(headingValues);
+        }
     }
 }
