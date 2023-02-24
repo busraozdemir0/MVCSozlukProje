@@ -22,8 +22,23 @@
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
 </head>
+<script>
+    $('#compose-textarea').summernote({
+        placeholder: 'Mesajın içeriği',
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>
 <body class="hold-transition sidebar-mini">
-
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">

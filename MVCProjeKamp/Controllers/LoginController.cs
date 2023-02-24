@@ -25,12 +25,14 @@ namespace MVCProjeKamp.Controllers
             var adminUserInfo = context.Admins.FirstOrDefault(x => x.AdminUserName == p.AdminUserName && x.AdminPassword == p.AdminPassword);
             if (adminUserInfo != null) 
             {
+                ViewBag.bilgi = adminUserInfo;
                 FormsAuthentication.SetAuthCookie(adminUserInfo.AdminUserName,false);
                 Session["AdminUserName"] = adminUserInfo.AdminUserName;
                 return RedirectToAction("Index", "AdminCategory");
             }
             else
             {
+                ViewBag.errorMessage = "Kullanıcı Adı veya parolanız hatalı! Lütfen tekrar deneyiniz.";
                 return RedirectToAction("Index");
             }
         }

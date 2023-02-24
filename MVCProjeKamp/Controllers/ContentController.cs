@@ -17,22 +17,21 @@ namespace MVCProjeKamp.Controllers
         {
             return View();
         }
-        public ActionResult GetAllContent(string p="")
+        [HttpGet]
+        public ActionResult GetAllContent()
         {
-            if (p != null)
-            {
-                var values = cm.GetList(p);
-                return View(values);
-            }
-            else
-            {
-                var values = cm.GetList();
-                return View(values.ToList());
-            }
+            var values = cm.GetList();
+            return View(values.ToList());
+        }
+        [HttpPost]
+        public ActionResult GetAllContent(string p)
+        {
+            var values = cm.GetList(p);
+            return View(values);
         }
         public ActionResult ContentByHeading(int id)
         {
-            var contentValues=cm.GetListByHeadingID(id);
+            var contentValues = cm.GetListByHeadingID(id);
             return View(contentValues);
         }
     }

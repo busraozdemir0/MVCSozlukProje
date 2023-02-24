@@ -56,13 +56,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         <nav class="main-header d-flex">
             <div id="brand">
                 <div id="logo">
-                    <a href="index.html">
+                    <a href="/Home/HomePage/">
                         <i class="fas fa-crosshairs"></i>
                     </a>
                 </div>
                 <div id="word-mark">
                     <h1>
-                        <a href="index.html">Sözlük</a>
+                        <a href="/Home/HomePage/">Sözlük</a>
                     </h1>
                 </div>
             </div>
@@ -501,11 +501,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <div class="col-md-6 con-left" data-aos="fade-up">
                                 <div class="form-group">
 
-                                    <input class="form-control" type="text" name="Name" placeholder="Adınız" required="">
+                                    <input class="form-control" type="text" name="UserName" placeholder="Adınız" required="">
                                 </div>
                                 <div class="form-group">
 
-                                    <input class="form-control" type="email" name="Email" placeholder="Mail Adresiniz" required="">
+                                    <input class="form-control" type="email" name="UserMail" placeholder="Mail Adresiniz" required="">
                                 </div>
                                 <div class="form-group">
 
@@ -514,7 +514,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </div>
                             <div class="col-md-6 con-right" data-aos="fade-up">
                                 <div class="form-group">
-                                    <textarea id="textarea" placeholder="Mesajınız" required=""></textarea>
+                                    <textarea id="textarea" placeholder="Mesajınız" name="Message" required=""></textarea>
                                 </div>
                             </div>
                             <div class="sub-honey mx-auto mt-3">
@@ -625,7 +625,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="offset-lg-4"></div>
                 <div class="col-lg-4 footer-end-grid mt-md-0 mt-sm-5" data-aos="fade-up">
                     <h2>
-                        <a href="index.html">
+                        <a href="#">
                             <i class="fas fa-crosshairs"></i> SÖZLÜK
                         </a>
                     </h2>
@@ -682,24 +682,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="modal-body">
 
                     <div class="login px-4 mx-auto mw-100">
-                        <h5 class="text-center mb-4">Login Now</h5>
+                        <h5 class="text-center mb-4">Giriş Seçenekleri</h5>
                         <form action="#" method="post">
-                            <div class="form-group">
-                                <label class="mb-2">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="" required="">
-                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                            </div>
-                            <div class="form-group">
-                                <label class="mb-2">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="" required="">
-                            </div>
-                            <div class="form-check mb-2">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
-                            </div>
-                            <button type="submit" class="btn btn-primary submit mb-4">Sign In</button>
-                            <p class="text-center pb-4">
-                                <a href="#" data-toggle="modal" data-target="#exampleModalCenter2"> Don't have an account?</a>
+                            <a href="/Login/Index/" class="btn btn-outline-dark submit" style="width:200px;">Admin Giriş</a>
+                            <a href="/Login/WriterLogin/" class="btn btn-outline-dark submit" style="width:200px;">Yazar Giriş</a>
+                            <p class="text-center pb-1 mt-3">
+                                <a href="#" data-toggle="modal" data-target="#exampleModalCenter2"> Bir hesabın yok mu? </a>
                             </p>
                         </form>
                     </div>
