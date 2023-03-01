@@ -2715,7 +2715,7 @@
     <Content Include="Views\WriterPanelContent\AddContent.cshtml" />
     <Content Include="Views\Home\HomePage.cshtml" />
     <Content Include="Views\Content\GetAllContent.cshtml" />
-    <Content Include="Views\Chart\Index.cshtml" />
+    <Content Include="Views\Chart\CategoryListColumnChart.cshtml" />
     <Content Include="Views\Heading\HeadingReport.cshtml" />
     <Content Include="Views\Test\SweetAlert.cshtml" />
     <Content Include="Views\Authorization\Index.cshtml" />
@@ -2723,6 +2723,7 @@
     <Content Include="Views\Authorization\EditAdmin.cshtml" />
     <Content Include="Views\Register\WriterRegister.cshtml" />
     <Content Include="Views\Chart\HeadingListColumnChart.cshtml" />
+    <Content Include="Views\Chart\WriterListColumnChart.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE-3.0.4\resimlerim\" />

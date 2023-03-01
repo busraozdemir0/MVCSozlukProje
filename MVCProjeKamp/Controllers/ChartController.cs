@@ -11,25 +11,21 @@ namespace MVCProjeKamp.Controllers
     public class ChartController : Controller
     {
         // GET: Chart
-        public ActionResult Index()
-        {
-            return View();
-        }
-        public ActionResult HeadingListColumnChart()
+        public ActionResult CategoryListColumnChart()
         {
             return View();
         }
         public ActionResult CategoryChart()
         {   //köprü görevi görecek olan action
-            return Json(BlogList(),JsonRequestBehavior.AllowGet);
+            return Json(CategoryList(), JsonRequestBehavior.AllowGet);
         }
-        public List<CategoryClass> BlogList()
+        public List<CategoryClass> CategoryList()
         {
-            List<CategoryClass> ct=new List<CategoryClass>();
+            List<CategoryClass> ct = new List<CategoryClass>();
             ct.Add(new CategoryClass()
             {
-                CategoryName="Yazılım",
-                CategoryCount=8
+                CategoryName = "Yazılım",
+                CategoryCount = 8
             });
             ct.Add(new CategoryClass()
             {
@@ -49,7 +45,12 @@ namespace MVCProjeKamp.Controllers
             return ct;
         }
 
-        public ActionResult HeadingChart() 
+
+        public ActionResult HeadingListColumnChart()
+        {
+            return View();
+        }
+        public ActionResult HeadingChart()
         {
             return Json(HeadingList(), JsonRequestBehavior.AllowGet);
         }
@@ -66,6 +67,30 @@ namespace MVCProjeKamp.Controllers
             }
 
             return headingClasses;
+        }
+
+
+        public ActionResult WriterListColumnChart()
+        {
+            return View();
+        }
+        public ActionResult WriterChart()
+        {
+            return Json(WriterList(), JsonRequestBehavior.AllowGet);
+        }
+        public List<WriterClass> WriterList()
+        {
+            List<WriterClass> writerClasses = new List<WriterClass>();
+            using (var context = new Context())
+            {
+                writerClasses = context.Writers.Select(x => new WriterClass
+                {
+                    WriterName=x.WriterName,
+                    WriterCount=x.Headings.Count()
+                }).ToList();
+            }
+
+            return writerClasses;
         }
     }
 }
