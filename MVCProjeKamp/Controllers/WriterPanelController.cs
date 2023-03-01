@@ -36,6 +36,7 @@ namespace MVCProjeKamp.Controllers
             ValidationResult results = writerValidator.Validate(p);
             if (results.IsValid)
             {
+                p.WriterStatus = true;
                 wm.WriterUpdate(p);
                 return RedirectToAction("AllHeading","WriterPanel");
             }

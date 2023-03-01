@@ -54,6 +54,7 @@ namespace MVCProjeKamp.Controllers
             }
             else
             {
+                ViewBag.errorMessage = "Kullanıcı Adı veya parolanız hatalı! Lütfen tekrar deneyiniz.";
                 return RedirectToAction("WriterLogin");
             }
         }
