@@ -6,64 +6,70 @@
 
 <br />
 <h2>Profilinizi Düzenleyin</h2>
-@using (Html.BeginForm("WriterProfile", "WriterPanel", FormMethod.Post))
-{
-    <div class="form-group">
-        @Html.Hidden("Yazar ID")
-        @Html.HiddenFor(x => x.WriterID, new { @class = "form-control" })
-        <br />
-        @Html.Label("Yazar Adı")
-        @Html.TextBoxFor(x => x.WriterName, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterName, null, new { @class = "text-danger" })
-        <br />
-        @Html.Label("Yazar Soyadı")
-        @Html.TextBoxFor(x => x.WriterSurname, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterSurname, null, new { @class = "text-danger" })
-        <br />
-        @Html.Label("Yazar Mail")
-        @Html.TextBoxFor(x => x.WriterMail, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterMail, null, new { @class = "text-danger" })
-        <br />
-        @Html.Label("Yazar Şifresi")
-        @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterPassword, null, new { @class = "text-danger" })
-        <br />
-        @*@Html.Label("Yazar Görsel Linki")
-        @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterImage, null, new { @class = "text-danger" })
-        <br />*@
-        @Html.Label("Yazar Unvan")
-        @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterTitle, null, new { @class = "text-danger" })
-        <br />
-        @Html.Label("Yazar Hakkında")
-        @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
-        @Html.ValidationMessageFor(x => x.WriterAbout, null, new { @class = "text-danger" })
-        <br />
-        <div class="form-group">
-            <label for="exampleInputEmail3">Yazar Resmi</label>
-            <div class="col-lg-8">
-                <div class="fileupload fileupload-new" data-provides="fileupload">
-                    <div class="input-append">
-                        <div class="uneditable-input">
-                            <i class="fas fa-file fileupload-exists"></i>
-                            <span class="fileupload-preview"></span>
-                            <span class="btn btn-default btn-file" style="margin-left:10px">
-                                <span class="fileupload-new">Dosya Seçiniz</span>
-                                <input type="file" name="WriterImage" required />
-                            </span>
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <form class="forms-sample" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label hidden for="exampleInputName1">Yazar ID</label>
+                    <input hidden type="text" name="WriterID" value="@Model.WriterID" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Adı</label>
+                    <input type="text" name="WriterName" value="@Model.WriterName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Soyadı</label>
+                    <input type="text" name="WriterSurname" value="@Model.WriterSurname" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Şifresi</label>
+                    <input type="text" name="WriterPassword" value="@Model.WriterPassword" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Maili</label>
+                    <input type="text" name="WriterMail" value="@Model.WriterMail" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Başlığı</label>
+                    <input type="text" name="WriterTitle" value="@Model.WriterTitle" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Yazar Hakkında</label>
+                    <input type="text" name="WriterAbout" value="@Model.WriterAbout" class="form-control" />
+                </div>
+                @*<div class="form-group">
+                    <div class="form-group">
+                        <label for="exampleInputEmail3">Yazar Resmi</label>
+                        <div class="col-lg-8">
+                            <div class="fileupload fileupload-new" data-provides="fileupload">
+                                <div class="input-append">
+                                    <div class="uneditable-input">
+                                        <i class="fas fa-file fileupload-exists"></i>
+                                        <span class="fileupload-preview"></span>
+                                    </div>
+                                    <span class="btn btn-default btn-file">
+
+                                        <span class="fileupload-new">Dosya Seçiniz</span>
+                                        <input type="file" name="WriterImage" required />
+                                    </span>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>*@
+
+                <button type="submit" class="btn btn-success">Kaydet</button>
+                <button type="reset" class="btn btn-outline-dark">İptal</button>
+            </form>
         </div>
-        <button class="btn btn-success">Değişiklikleri Kaydet</button>
-        <br /><br /><br />
     </div>
-}
-
-
-
+</div>
+<br />
+<br />
+<br />
+ 
 
 
 

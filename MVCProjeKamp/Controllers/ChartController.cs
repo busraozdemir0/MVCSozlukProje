@@ -1,4 +1,5 @@
-﻿using MVCProjeKamp.Models;
+﻿using DataAccessLayer.Concrete;
+using MVCProjeKamp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,6 +12,10 @@ namespace MVCProjeKamp.Controllers
     {
         // GET: Chart
         public ActionResult Index()
+        {
+            return View();
+        }
+        public ActionResult HeadingListColumnChart()
         {
             return View();
         }
@@ -42,6 +47,25 @@ namespace MVCProjeKamp.Controllers
                 CategoryCount = 1
             });
             return ct;
+        }
+
+        public ActionResult HeadingChart() 
+        {
+            return Json(HeadingList(), JsonRequestBehavior.AllowGet);
+        }
+        public List<HeadingClass> HeadingList()
+        {
+            List<HeadingClass> headingClasses = new List<HeadingClass>();
+            using (var context = new Context())
+            {
+                headingClasses = context.Headings.Select(x => new HeadingClass
+                {
+                    HeadingName = x.HeadingName,
+                    HeadingCount = x.Contents.Count()
+                }).ToList();
+            }
+
+            return headingClasses;
         }
     }
 }

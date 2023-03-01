@@ -32,26 +32,24 @@ namespace MVCProjeKamp.Controllers
             return View(writerValue);
         }
         [HttpPost]
-        public async Task<ActionResult> WriterProfile(Writer p)
+        public /*async Task*/ ActionResult WriterProfile(Writer p)
         {
             WriterValidator writerValidator = new WriterValidator();
             ValidationResult results = writerValidator.Validate(p);
             if (results.IsValid)
             {
-                if(ModelState.IsValid)
-                {
-                    string filename = Path.GetFileNameWithoutExtension(p.WriterImage.FileName);
-                    string extension = Path.GetExtension(p.WriterImage.FileName); 
-                    p.WriterImagePath = filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
-                    string path = Path.Combine("/AdminLTE-3.0.4/resimlerim/", filename);
-                    using (var filestream = new FileStream(path, FileMode.Create))
-                    {
-                        await p.WriterImage.CopyToAsync(filestream);
-                    }
-                   
-                }     p.WriterStatus = true;
-                    wm.WriterUpdate(p);
-                    return RedirectToAction("AllHeading", "WriterPanel");                        
+
+                //string filename = Path.GetFileNameWithoutExtension(p.WriterImage.FileName);
+                //string extension = Path.GetExtension(p.WriterImage.FileName);
+                //p.WriterImagePath = filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
+                //string path = Path.Combine("/AdminLTE-3.0.4/resimlerim/", filename);
+                //using (var filestream = new FileStream(path, FileMode.Create))
+                //{
+                //    await p.WriterImage.CopyToAsync(filestream);
+                //}
+                p.WriterStatus = true;
+                wm.WriterUpdate(p);
+                return RedirectToAction("AllHeading", "WriterPanel");
             }
             else
             {
@@ -64,11 +62,11 @@ namespace MVCProjeKamp.Controllers
         }
         public ActionResult MyHeading(string p)
         {
-            Context context=new Context();
+            Context context = new Context();
             p = (string)Session["WriterMail"];
             var writerIdInfo = context.Writers.Where(x => x.WriterMail == p).Select(y => y.WriterID).FirstOrDefault();
             var values = hm.GetListByWriter(writerIdInfo);
-            return View(values);        
+            return View(values);
         }
         [HttpGet]
         public ActionResult NewHeading()
@@ -130,7 +128,7 @@ namespace MVCProjeKamp.Controllers
             }
             return RedirectToAction("MyHeading");
         }
-        public ActionResult AllHeading(int p=1)
+        public ActionResult AllHeading(int p = 1)
         {
             var headings = hm.GetList().ToPagedList(p, 4);
             return View(headings);

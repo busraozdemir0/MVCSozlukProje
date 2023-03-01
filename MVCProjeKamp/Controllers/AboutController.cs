@@ -27,24 +27,11 @@ namespace MVCProjeKamp.Controllers
             return View();
         }
         [HttpPost]
-        public async Task<ActionResult> AddAbout(About p)
+        public ActionResult AddAbout(About p)
         {
-            if (ModelState.IsValid)
-            {
-                string filename = Path.GetFileNameWithoutExtension(p.AboutImage.FileName);
-                string extension = Path.GetExtension(p.AboutImage.FileName);
-                p.AboutImageYol = filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
-                string path = Path.Combine("/AdminLTE-3.0.4/resimlerim/", filename);
-                using (var filestream = new FileStream(path, FileMode.Create))
-                {
-                    await p.AboutImage.CopyToAsync(filestream);
-                }
-            }
             p.AboutStatus = true;
             abm.AboutAdd(p);
             return RedirectToAction("Index");
-
-
         }
         public PartialViewResult AboutPartial()
         {
