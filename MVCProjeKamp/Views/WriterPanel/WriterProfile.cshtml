@@ -28,10 +28,10 @@
         @Html.TextBoxFor(x => x.WriterPassword, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterPassword, null, new { @class = "text-danger" })
         <br />
-        @Html.Label("Yazar Görsel Linki")
+        @*@Html.Label("Yazar Görsel Linki")
         @Html.TextBoxFor(x => x.WriterImage, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterImage, null, new { @class = "text-danger" })
-        <br />
+        <br />*@
         @Html.Label("Yazar Unvan")
         @Html.TextBoxFor(x => x.WriterTitle, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterTitle, null, new { @class = "text-danger" })
@@ -40,7 +40,25 @@
         @Html.TextBoxFor(x => x.WriterAbout, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.WriterAbout, null, new { @class = "text-danger" })
         <br />
+        <div class="form-group">
+            <label for="exampleInputEmail3">Yazar Resmi</label>
+            <div class="col-lg-8">
+                <div class="fileupload fileupload-new" data-provides="fileupload">
+                    <div class="input-append">
+                        <div class="uneditable-input">
+                            <i class="fas fa-file fileupload-exists"></i>
+                            <span class="fileupload-preview"></span>
+                            <span class="btn btn-default btn-file" style="margin-left:10px">
+                                <span class="fileupload-new">Dosya Seçiniz</span>
+                                <input type="file" name="WriterImage" required />
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <button class="btn btn-success">Değişiklikleri Kaydet</button>
+        <br /><br /><br />
     </div>
 }
 

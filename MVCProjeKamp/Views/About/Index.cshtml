@@ -6,10 +6,12 @@
 }
 
 <h2>Hakkımda Veri Listesi</h2>
-<table class="table table-bordered">
+<table class="table table-hover">
     <tr>
         <th hidden>ID</th>
         <th>Hakkımda Başlığı</th>
+        <th>Hakkımda Görsel</th>
+        <th>Durum</th>
         <th>Aktif Yap</th>
         <th>Pasif Yap</th>
     </tr>
@@ -17,9 +19,11 @@
     {
         <tr>
             <td hidden>@item.AboutID</td>
-            <td>Başlık</td>
-            <td><a href="#" class="btn btn-warning">Aktif Yap</a></td>
-            <td><a href="#" class="btn btn-danger">Pasif Yap</a></td>
+            <td>@item.AboutTitle</td>
+            <td><img src="~/AdminLTE-3.0.4/resimlerim/@item.AboutImageYol"/></td>
+            <td>@item.AboutStatus</td>
+            <td><a href="/About/ActiveAbout/@item.AboutID" class="btn btn-warning">Aktif Yap</a></td>
+            <td><a href="/About/PassiveAbout/@item.AboutID" class="btn btn-danger">Pasif Yap</a></td>
         </tr>
     }
 </table>
