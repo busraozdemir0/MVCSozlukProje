@@ -233,6 +233,7 @@
     <Content Include="AdminLTE-3.0.4\dist\img\prod-3.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\prod-4.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\prod-5.jpg" />
+    <Content Include="AdminLTE-3.0.4\dist\img\sozluk.png" />
     <Content Include="AdminLTE-3.0.4\dist\img\user1-128x128.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user2-160x160.jpg" />
     <Content Include="AdminLTE-3.0.4\dist\img\user3-128x128.jpg" />
