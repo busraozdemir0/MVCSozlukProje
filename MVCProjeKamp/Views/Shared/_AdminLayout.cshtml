@@ -142,22 +142,36 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Contact/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-edit"></i>
-                                <p>
-                                    İletişim & Mesajlar
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="/Authorization/Index/" class="nav-link">
-                                <i class="nav-icon fas fa-calendar-alt"></i>
-                                <p>
-                                    Yetkilendirmeler
-                                </p>
-                            </a>
-                        </li>
+                        @if (User.IsInRole("1") || User.IsInRole("2"))
+                        {
+                            <li class="nav-item has-treeview">
+                                <a href="/Contact/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-edit"></i>
+                                    <p>
+                                        İletişim & Mesajlar
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                        @if (User.IsInRole("1"))
+                        {
+                            <li class="nav-item">
+                                <a href="/Role/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-exchange-alt"></i>
+                                    <p>
+                                        Roller
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/Authorization/Index/" class="nav-link">
+                                    <i class="nav-icon fas fa-calendar-alt"></i>
+                                    <p>
+                                        Yetkilendirmeler
+                                    </p>
+                                </a>
+                            </li>
+                        }
                         <li class="nav-item">
                             <a href="/Gallery/Index/" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
@@ -174,42 +188,45 @@ to get the desired effect
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/ErrorPage/Page404/" class="nav-link">
-                                <i class="nav-icon far fa-envelope"></i>
-                                <p>
-                                    Hata Sayfaları
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Default/Headings/" class="nav-link">
-                                <i class="nav-icon fas fa-door-closed"></i>
-                                <p>
-                                    Sözlüğe Git
+                        @if (User.IsInRole("1") || User.IsInRole("2"))
+                        {
+                            <li class="nav-item has-treeview">
+                                <a href="/ErrorPage/Page404/" class="nav-link">
+                                    <i class="nav-icon far fa-envelope"></i>
+                                    <p>
+                                        Hata Sayfaları
+                                    </p>
+                                </a>
+                            </li>
+                        }
+                            <li class="nav-item has-treeview">
+                                <a href="/Default/Headings/" class="nav-link">
+                                    <i class="nav-icon fas fa-door-closed"></i>
+                                    <p>
+                                        Sözlüğe Git
 
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Home/HomePage/" class="nav-link">
-                                <i class="nav-icon fas fa-home"></i>
-                                <p>
-                                    Ana Sayfa
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a href="/Home/HomePage/" class="nav-link">
+                                    <i class="nav-icon fas fa-home"></i>
+                                    <p>
+                                        Ana Sayfa
 
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview">
-                            <a href="/Login/LogOut/" class="nav-link">
-                                <i class="nav-icon fas fa-unlock-alt"></i>
-                                <p>
-                                    Çıkış Yap
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item has-treeview">
+                                <a href="/Login/LogOut/" class="nav-link">
+                                    <i class="nav-icon fas fa-unlock-alt"></i>
+                                    <p>
+                                        Çıkış Yap
 
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
                 </nav>
                 <!-- /.sidebar-menu -->
             </div>

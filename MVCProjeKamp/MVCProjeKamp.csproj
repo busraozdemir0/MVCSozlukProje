@@ -176,6 +176,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MessageController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Controllers\WriterController.cs" />
     <Compile Include="Controllers\WriterPanelContentController.cs" />
@@ -2724,6 +2725,9 @@
     <Content Include="Views\Register\WriterRegister.cshtml" />
     <Content Include="Views\Chart\HeadingListColumnChart.cshtml" />
     <Content Include="Views\Chart\WriterListColumnChart.cshtml" />
+    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Role\AddRole.cshtml" />
+    <Content Include="Views\Role\UpdateRole.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE-3.0.4\resimlerim\" />

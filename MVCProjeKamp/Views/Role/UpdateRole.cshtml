@@ -1,0 +1,23 @@
+﻿@model EntityLayer.Concrete.Role
+@{
+    ViewBag.Title = "UpdateRole";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<br />
+<h2>Rol Güncelleme Sayfası</h2>
+@using (Html.BeginForm("UpdateRole", "Role", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.HiddenFor(x => x.RoleID, new { @class = "form-control" })
+        <br />
+        @Html.Label("Rol Adı")
+        @Html.TextBoxFor(x => x.RoleName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Rol Açıklaması")
+        @Html.TextBoxFor(x => x.RoleDescription, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}
+

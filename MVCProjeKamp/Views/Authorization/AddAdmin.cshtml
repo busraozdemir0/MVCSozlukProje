@@ -8,7 +8,7 @@
 @using (Html.BeginForm("AddAdmin", "Authorization", FormMethod.Post))
 {
 <div class="form-group">
-    @Html.Label("Admin kullanıcı Adı")
+    @Html.Label("Admin Kullanıcı Adı")
     @Html.TextBoxFor(x => x.AdminUserName, new { @class = "form-control" })
     <br />
     @Html.Label("Şifreyi giriniz")

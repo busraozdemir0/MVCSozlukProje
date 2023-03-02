@@ -12,6 +12,7 @@ using System.Web.Security;
 
 namespace MVCProjeKamp.Controllers
 {
+    //[Authorize(Roles="A")]
     public class AuthorizationController : Controller
     {
         // GET: Authorization
