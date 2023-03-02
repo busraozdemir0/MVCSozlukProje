@@ -11,18 +11,34 @@
         <th hidden>#</th>
         <th>Kullanıcı Mail</th>
         <th>Yetki</th>
-        <th>Status</th>
+        <th>Durum</th>
+        <th>Aktif Yap</th>
         <th>Pasif Yap</th>
-        <th>Yetkisini Değiştir</th>
+        <th>Yetki</th>
     </tr>
     @foreach (var item in Model)
     {
         <tr>
             <th hidden>@item.AdminID</th>
             <td>@item.AdminUserName</td>
-            <td>@item.AdminRole</td>
-            <td>Aktif</td>
-            <td><a href="/Authorization/DeleteAdmin/@item.AdminID" class="btn btn-danger">Pasif Yap</a></td>
+            <td>@item.Role.RoleName</td>
+            <td>
+                @{
+                    string renk;
+                    if (item.AdminStatus == true)
+                    {
+                        renk = "text-success";
+                        <p class="@renk">Aktif</p>
+                    }
+                    else
+                    {
+                        renk = "text-danger";
+                        <p class="@renk">Pasif</p>
+                    }
+                }
+            </td>
+            <td><a href="/Authorization/ActiveAdmin/@item.AdminID" class="btn btn-success">Aktif</a></td>
+            <td><a href="/Authorization/PassiveAdmin/@item.AdminID" class="btn btn-danger">Pasif</a></td>
             <td><a href="/Authorization/EditAdmin/@item.AdminID" class="btn btn-warning">Yetkisini Değiştir</a></td>
         </tr>
     }

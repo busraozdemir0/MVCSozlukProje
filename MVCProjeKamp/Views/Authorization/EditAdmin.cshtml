@@ -17,12 +17,10 @@
         @Html.Label("Şifre")
         @Html.TextBoxFor(x => x.AdminPassword, new { @class = "form-control" })
         <br />
-        @Html.Label("Rol")
-        @Html.TextBoxFor(x => x.AdminRole, new { @class = "form-control" })
+        @Html.Label("Rolü Seçiniz")
+        @Html.DropDownListFor(x => x.RoleID, (List<SelectListItem>)ViewBag.roles, new { @class = "form-control" })
         <br />
         <button class="btn btn-success">Güncelle</button>
-
-
     </div>
 }
 

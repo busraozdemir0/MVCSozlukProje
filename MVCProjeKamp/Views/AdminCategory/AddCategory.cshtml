@@ -10,15 +10,30 @@
 {
     <div class="form-group">
         @Html.Label("Kategori Adı")
-        @Html.TextBoxFor(x => x.CategoryName, new { @class="form-control"})
+        @Html.TextBoxFor(x => x.CategoryName, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryName)
-        <br /> <br />
+        <br /> 
         @Html.Label("Açıklamayı Yazınız")
         @Html.TextAreaFor(x => x.CategoryDescription, new { @class = "form-control" })
         @Html.ValidationMessageFor(x => x.CategoryDescription)
-        <br /> <br />
-        <button class="btn btn-info">Kaydet</button>
+        <br />
+        <button id="btn" class="btn btn-info">Kaydet</button>
     </div>
 }
 
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    $('.btn').click(function () {
+        swal({
+            title: "Tebrikler!",
+            text: "Kategori başarılı bir şekilde eklendi.",
+            buttons: false,
+            icon: "info",
+            timer: 10000
+        }).then(function () {
+            window.location.reload(true);
+            tr.hide();
+        });
+    });
+</script>
 

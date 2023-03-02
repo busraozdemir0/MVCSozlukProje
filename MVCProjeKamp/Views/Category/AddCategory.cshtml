@@ -11,20 +11,11 @@
        @Html.Label("Kategori Adı")
        @Html.TextBoxFor(x => x.CategoryName)
        @Html.ValidationMessageFor(x => x.CategoryName)
-       <br /> <br />
+       <br />
        @Html.Label("Açıklamayı Yazınız")
        @Html.TextBoxFor(x => x.CategoryDescription)
        @Html.ValidationMessageFor(x => x.CategoryDescription)
-       <br /> <br />
-       <button>Kaydet</button>
+       <br />
+       <button id="buton">Kaydet</button>
    </div>
 }
-
-
-@*<form class="from form-group" method="post">
-        <input type="text" placeholder="Kategori Adı" name="CategoryName" class="form-control" />
-        <br />
-        <input type="text" placeholder="Açıklama" name="CategoryDescription" class="form-control" />
-        <br />
-        <button class="btn btn-primary">Ekle</button>
-    </form>*@

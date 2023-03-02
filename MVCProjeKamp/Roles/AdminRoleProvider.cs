@@ -40,7 +40,7 @@ namespace MVCProjeKamp.Roles
         {
             Context context = new Context();
             var x=context.Admins.FirstOrDefault(y=>y.AdminUserName== username);
-            return new string[] { x.AdminRole };
+            return new string[] { x.RoleID.ToString() };
         }
 
         public override string[] GetUsersInRole(string roleName)

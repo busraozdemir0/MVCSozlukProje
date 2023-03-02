@@ -21,7 +21,22 @@
             <td hidden>@item.AboutID</td>
             <td>@item.AboutTitle</td>
             <td><img src="~/AdminLTE-3.0.4/resimlerim/@item.AboutImageYol"/></td>
-            <td>@item.AboutStatus</td>
+            <td>
+                @{
+                    string renk;
+                    if (item.AboutStatus == true)
+                    {
+                        renk = "text-success";
+                        <p class="@renk">Aktif</p>
+
+                    }
+                    else
+                    {
+                        renk = "text-danger";
+                        <p class="@renk">Pasif</p>
+                    }
+                }
+            </td>
             <td><a href="/About/ActiveAbout/@item.AboutID" class="btn btn-warning">Aktif Yap</a></td>
             <td><a href="/About/PassiveAbout/@item.AboutID" class="btn btn-danger">Pasif Yap</a></td>
         </tr>
