@@ -67,5 +67,11 @@ namespace MVCProjeKamp.Controllers
             }
             return View();
         }
+        public ActionResult DeleteMessage(int id)
+        {
+            var deleteID=mm.GetByID(id);
+            mm.MessageDelete(deleteID);
+            return RedirectToAction("Inbox");
+        }
     }
 }

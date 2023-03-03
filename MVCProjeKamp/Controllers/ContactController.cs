@@ -32,5 +32,11 @@ namespace MVCProjeKamp.Controllers
         {
             return PartialView();
         }
+        public ActionResult DeleteContact(int id)
+        {
+            var deleteID = cm.GetByID(id);
+            cm.ContactDelete(deleteID);
+            return RedirectToAction("Index");
+        }
     }
 }

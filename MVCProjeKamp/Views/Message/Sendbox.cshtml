@@ -57,12 +57,12 @@
                             <!-- /.btn-group -->
                             <button type="button" class="btn btn-default btn-sm"><i class="fas fa-sync-alt"></i></button>
                             <!--<div class="float-right">
-                                1-50/200
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
-                                    <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
-                                </div>-->
-                                <!-- /.btn-group -->
+                            1-50/200
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
+                                <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
+                            </div>-->
+                            <!-- /.btn-group -->
                             <!--</div>-->
                             <!-- /.float-right -->
                         </div>
@@ -81,21 +81,24 @@
                                             <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetails/@item.MessageID">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, 30) ...
+                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, item.MessageContent.Substring(0, 15).LastIndexOf(" "))...
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
+                                            <td>  <a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></a></td>
+
                                         </tr>
                                     }
                                 </tbody>
                             </table>
                             <!-- /.table -->
                         </div>
+
                         <!-- /.mail-box-messages -->
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer p-0">
-                       
+
                     </div>
                 </div>
                 <!-- /.card -->
