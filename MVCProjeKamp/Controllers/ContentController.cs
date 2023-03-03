@@ -1,6 +1,7 @@
 ﻿using BusinessLayer.Concrete;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +21,10 @@ namespace MVCProjeKamp.Controllers
         [HttpGet]
         public ActionResult GetAllContent()
         {
-            var values = cm.GetList();
+            Context context = new Context();
+            var values = context.Contents.Where(x=>x.ContentStatus==true).ToList();
             return View(values.ToList());
+
         }
         [HttpPost]
         public ActionResult GetAllContent(string p)
