@@ -24,6 +24,10 @@
                     <input type="text" name="WriterSurname" value="@Model.WriterSurname" class="form-control" />
                 </div>
                 <div class="form-group">
+                    <label for="exampleInputName1">Yazar Görsel Url'si'</label>
+                    <input type="text" name="WriterImage" value="@Model.WriterImage" class="form-control" />
+                </div>
+                <div class="form-group">
                     <label for="exampleInputName1">Yazar Şifresi</label>
                     <input type="text" name="WriterPassword" value="@Model.WriterPassword" class="form-control" />
                 </div>
@@ -39,26 +43,6 @@
                     <label for="exampleInputName1">Yazar Hakkında</label>
                     <input type="text" name="WriterAbout" value="@Model.WriterAbout" class="form-control" />
                 </div>
-                @*<div class="form-group">
-                    <div class="form-group">
-                        <label for="exampleInputEmail3">Yazar Resmi</label>
-                        <div class="col-lg-8">
-                            <div class="fileupload fileupload-new" data-provides="fileupload">
-                                <div class="input-append">
-                                    <div class="uneditable-input">
-                                        <i class="fas fa-file fileupload-exists"></i>
-                                        <span class="fileupload-preview"></span>
-                                    </div>
-                                    <span class="btn btn-default btn-file">
-
-                                        <span class="fileupload-new">Dosya Seçiniz</span>
-                                        <input type="file" name="WriterImage" required />
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>*@
 
                 <button type="submit" class="btn btn-success">Kaydet</button>
                 <button type="reset" class="btn btn-outline-dark">İptal</button>
@@ -70,7 +54,4 @@
 <br />
 <br />
  
-
-
-
 <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>

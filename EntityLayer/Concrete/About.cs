@@ -13,13 +13,10 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int AboutID { get; set; }
-        [StringLength(500)] 
+        [StringLength(500)] //veritabanında AboutTitle sütunu için 500 karakterlik alan oluşturulur
         public string AboutTitle { get; set; }
-        [StringLength(1000)]  //veritabanında AboutDetails1 sütunu için 1000 karakterlik alan oluşturulur
         public string AboutDetails { get; set; }
-        public string AboutImageYol { get; set; }
-        [NotMapped]
-        public IFormFile AboutImage { get; set; }       
+        public string AboutImage{ get; set; }     
         public bool AboutStatus { get; set; }
         
     }

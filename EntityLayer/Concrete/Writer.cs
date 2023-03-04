@@ -13,21 +13,19 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int WriterID { get; set; }
-        [StringLength(50)]
+        [StringLength(100)]
         public string WriterName { get; set; }
-        [StringLength(50)]
+        [StringLength(100)]
         public string WriterSurname { get; set; }
-        public string WriterImagePath { get; set; }
-        [NotMapped]
-        public IFormFile WriterImage { get; set; }
-        [StringLength(200)]
+        public string WriterImage { get; set; }
+        [StringLength(1000)]
         public string WriterAbout { get; set; }
 
         [StringLength(100)]
         public string WriterMail { get; set; }
         [StringLength(200)]
         public string WriterPassword { get; set; }
-        [StringLength(50)]
+        [StringLength(150)]
         public string WriterTitle { get; set; }
         public bool WriterStatus { get; set; }
         public ICollection<Heading> Headings { get; set; }

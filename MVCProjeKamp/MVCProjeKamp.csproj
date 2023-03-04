@@ -2732,7 +2732,6 @@
     <Content Include="Views\Contact\ContactSearch.cshtml" />
     <Content Include="Views\WriterPanelMessage\MessageSearch.cshtml" />
     <Content Include="Views\WriterPanelContent\ContentByHeading.cshtml" />
-    <Content Include="Views\WriterPanelContent\UpdateContent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE-3.0.4\resimlerim\" />

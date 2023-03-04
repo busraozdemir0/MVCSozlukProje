@@ -32,21 +32,12 @@ namespace MVCProjeKamp.Controllers
             return View(writerValue);
         }
         [HttpPost]
-        public /*async Task*/ ActionResult WriterProfile(Writer p)
+        public ActionResult WriterProfile(Writer p)
         {
             WriterValidator writerValidator = new WriterValidator();
             ValidationResult results = writerValidator.Validate(p);
             if (results.IsValid)
             {
-
-                //string filename = Path.GetFileNameWithoutExtension(p.WriterImage.FileName);
-                //string extension = Path.GetExtension(p.WriterImage.FileName);
-                //p.WriterImagePath = filename = filename + DateTime.Now.ToString("yymmssfff") + extension;
-                //string path = Path.Combine("/AdminLTE-3.0.4/resimlerim/", filename);
-                //using (var filestream = new FileStream(path, FileMode.Create))
-                //{
-                //    await p.WriterImage.CopyToAsync(filestream);
-                //}
                 p.WriterStatus = true;
                 wm.WriterUpdate(p);
                 return RedirectToAction("AllHeading", "WriterPanel");

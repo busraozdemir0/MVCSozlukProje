@@ -13,10 +13,8 @@ namespace EntityLayer.Concrete
     {
         [Key]
         public int ImageID { get; set; }
-        [StringLength(100)]
+        [StringLength(300)]
         public string ImageName { get; set; }
-        public string ImagePath { get; set; }
-        [NotMapped]
-        public IFormFile Image { get; set; }
+        public string Image { get; set; }
     }
 }
