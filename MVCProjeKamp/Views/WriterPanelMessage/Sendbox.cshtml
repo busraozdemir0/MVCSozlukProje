@@ -30,14 +30,18 @@
                     <div class="card-header">
                         <h3 class="card-title">Gönderilen Mesajlar</h3>
                         <div class="card-tools">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
-                                <div class="input-group-append">
-                                    <div class="btn btn-primary">
-                                        <i class="fas fa-search"></i>
+                            @using (Html.BeginForm("MessageSearch", "WriterPanelMessage", FormMethod.Post))
+                            {
+                                <div class="input-group input-group-sm">
+                                    @*<input type="text" class="form-control" placeholder="Mail Kutusunda Ara">*@
+                                    @Html.TextBox("p")
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-search"></i>
+                                        </button>
                                     </div>
                                 </div>
-                            </div>
+                            }
                         </div>
                         <!-- /.card-tools -->
                     </div>
@@ -80,7 +84,7 @@
                                             <td class="mailbox-star"><a href="/WriterPanelMessage/GetSendboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/WriterPanelMessage/GetSendboxMessageDetails/@item.MessageID">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @item.MessageContent@*.Substring(0, 15) ...*@
+                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, item.MessageContent.Substring(0, 15).LastIndexOf(" "))...
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>

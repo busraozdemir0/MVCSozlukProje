@@ -23,8 +23,6 @@ namespace MVCProjeKamp.Controllers
         {
             Context context=new Context();
             string p = (string)Session["AdminUserName"];
-            var inboxCount = context.Messages.Count().ToString();
-            ViewBag.gelenMesajSayisi = inboxCount;
             var messageListIn = mm.GetListInbox(p);
             return View(messageListIn);
         }

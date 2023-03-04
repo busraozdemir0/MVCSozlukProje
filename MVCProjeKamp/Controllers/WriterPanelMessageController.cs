@@ -70,5 +70,16 @@ namespace MVCProjeKamp.Controllers
             }
             return View();
         }
+        [HttpGet]
+        public ActionResult MessageSearch()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MessageSearch(string p)
+        {
+            var values = mm.GetList(p);
+            return View(values);
+        }
     }
 }

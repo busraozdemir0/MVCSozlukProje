@@ -1,8 +1,8 @@
 ﻿@using EntityLayer.Concrete
 @model List<Message>
 @{
-    ViewBag.Title = "Inbox";
-    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewBag.Title = "MessageSearch";
+    Layout = "~/Views/Shared/_WriterLayout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -24,7 +24,7 @@
     <!-- Main content -->
     <section class="content">
         <div class="row">
-            @Html.Action("MessageListMenuPartial", "Contact")
+            @Html.Action("MessageListMenuPartial", "WriterPanelMessage")
             <!-- /.col -->
             <div class="col-md-9">
                 <div class="card card-primary card-outline">
@@ -66,7 +66,7 @@
                                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
                                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
                                 </div>-->
-                                <!-- /.btn-group -->
+                            <!-- /.btn-group -->
                             <!--</div>-->
                             <!-- /.float-right -->
                         </div>
@@ -76,21 +76,19 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            @*<td>
+                                            <td>
                                                 <div class="icheck-primary">
                                                     <input type="checkbox" value="" id="check1">
                                                     <label for="check1"></label>
                                                 </div>
-                                            </td>*@
-                                            <td>  <a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></a></td>
-                                            <td class="mailbox-star"><a href="/Message/GetInboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetInboxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
+                                            </td>
+                                            <td class="mailbox-star"><a href="/WriterPanelMessage/GetInboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/WriterPanelMessage/GetInboxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
                                             <td class="mailbox-subject">
                                                 <b>@item.Subject</b> - @item.MessageContent.Substring(0, item.MessageContent.Substring(0, 15).LastIndexOf(" "))...
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
-
                                         </tr>
                                     }
                                 </tbody>
@@ -101,7 +99,6 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer p-0">
-                        
                     </div>
                 </div>
                 <!-- /.card -->
@@ -113,4 +110,8 @@
 
 </body>
 </html>
+
 <script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+
+
+

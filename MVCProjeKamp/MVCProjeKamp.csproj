@@ -2730,6 +2730,7 @@
     <Content Include="Views\Role\UpdateRole.cshtml" />
     <Content Include="Views\Message\MessageSearch.cshtml" />
     <Content Include="Views\Contact\ContactSearch.cshtml" />
+    <Content Include="Views\WriterPanelMessage\MessageSearch.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AdminLTE-3.0.4\resimlerim\" />
