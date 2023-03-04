@@ -25,7 +25,7 @@ namespace MVCProjeKamp.Controllers
         [HttpGet]
         public ActionResult AddContent(int id)
         {
-            ViewBag.ID = id;
+            ViewBag.headingID = id;
             return View();
         }
         [HttpPost]
@@ -35,10 +35,15 @@ namespace MVCProjeKamp.Controllers
             string mail = (string)Session["WriterMail"];
             var writerIdInfo = context.Writers.Where(x => x.WriterMail == mail).Select(y => y.WriterID).FirstOrDefault();
             p.ContentDate=DateTime.Parse(DateTime.Now.ToShortDateString());
-            p.WriterID = writerIdInfo;
             p.ContentStatus = true;
+            p.WriterID = writerIdInfo;
             cm.ContentAdd(p);
             return RedirectToAction("MyContent");
+        }       
+        public ActionResult ContentByHeading(int id)
+        {
+            var contentValues = cm.GetListByHeadingID(id);
+            return View(contentValues);
         }
     }
 }
