@@ -2734,7 +2734,6 @@
     <Content Include="Views\WriterPanelContent\ContentByHeading.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="AdminLTE-3.0.4\resimlerim\" />
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>

@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 3 | Gallery</title>
+    <title>Galeri</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
@@ -44,7 +44,7 @@
                     <div class="card card-primary">
                         <div class="card-header">
                             <div class="card-title">
-                                Ekko Lightbox
+                                Fotoğraflar
                             </div>
                         </div>
                         <div class="card-body">
@@ -52,8 +52,8 @@
                                 @foreach (var item in Model)
                                 {
                                     <div class="col-sm-2">
-                                        <a href="@item.ImagePath" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery" >
-                                            <img src="@item.ImagePath" class="img-fluid mb-2" alt="white sample" style="height: 120px; width: 550px;" />
+                                        <a href="@item.Image" data-toggle="lightbox" data-title="@item.ImageName" data-gallery="gallery">
+                                            <img src="@item.Image" class="img-fluid mb-2" alt="white sample" style="height: 120px; width: 550px;" />
                                         </a>
                                     </div>
                                 }
