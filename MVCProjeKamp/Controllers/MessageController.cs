@@ -19,16 +19,18 @@ namespace MVCProjeKamp.Controllers
         MessageManager mm = new MessageManager(new EfMessageDal());
         // GET: Message
         [Authorize]
-        public ActionResult Inbox(string p)
+        public ActionResult Inbox()
         {
             Context context=new Context();
+            string p = (string)Session["AdminUserName"];
             var inboxCount = context.Messages.Count().ToString();
             ViewBag.gelenMesajSayisi = inboxCount;
             var messageListIn = mm.GetListInbox(p);
             return View(messageListIn);
         }
-        public ActionResult Sendbox(string p)
+        public ActionResult Sendbox()
         {
+            string p = (string)Session["AdminUserName"];
             var messageListSend = mm.GetListSendbox(p);
             return View(messageListSend);
         }
@@ -52,9 +54,12 @@ namespace MVCProjeKamp.Controllers
         public ActionResult NewMessage(Message p)
         {
             ValidationResult results = messageValidator.Validate(p);
+            Context context = new Context();
+            string adminMail = (string)Session["AdminUserName"];
             if (results.IsValid)
             {
                 p.MessageDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                p.SenderMail = adminMail;
                 mm.MessageAdd(p);
                 return RedirectToAction("Sendbox");
             }
@@ -72,6 +77,17 @@ namespace MVCProjeKamp.Controllers
             var deleteID=mm.GetByID(id);
             mm.MessageDelete(deleteID);
             return RedirectToAction("Inbox");
+        }
+        [HttpGet]
+        public ActionResult MessageSearch()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult MessageSearch(string p)
+        {
+            var values = mm.GetList(p);
+            return View(values);
         }
     }
 }

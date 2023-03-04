@@ -1,7 +1,13 @@
-﻿@using EntityLayer.Concrete
-@model List<Message>
+﻿
 @{
-    ViewBag.Title = "Inbox";
+    ViewBag.Title = "ContactSearch";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using EntityLayer.Concrete
+@model List<Contact>
+@{
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 
@@ -31,7 +37,7 @@
                     <div class="card-header">
                         <h3 class="card-title">Gelen Mesajlar</h3>
                         <div class="card-tools">
-                            @using (Html.BeginForm("MessageSearch", "Message", FormMethod.Post))
+                            @using (Html.BeginForm("ContactSearch", "Contact", FormMethod.Post))
                             {
                                 <div class="input-group input-group-sm">
                                     @*<input type="text" class="form-control" placeholder="Mail Kutusunda Ara">*@
@@ -66,7 +72,7 @@
                                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-left"></i></button>
                                     <button type="button" class="btn btn-default btn-sm"><i class="fas fa-chevron-right"></i></button>
                                 </div>-->
-                                <!-- /.btn-group -->
+                            <!-- /.btn-group -->
                             <!--</div>-->
                             <!-- /.float-right -->
                         </div>
@@ -82,14 +88,14 @@
                                                     <label for="check1"></label>
                                                 </div>
                                             </td>*@
-                                            <td>  <a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></a></td>
-                                            <td class="mailbox-star"><a href="/Message/GetInboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
-                                            <td class="mailbox-name"><a href="/Message/GetInboxMessageDetails/@item.MessageID">@item.SenderMail</a></td>
+                                            <td>  <a href="/Contact/DeleteContact/@item.ContactID" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></a></td>
+                                            <td class="mailbox-star"><a href="/Contact/GetContactDetails/@item.ContactID"><i class="fas fa-star text-warning"></i></a></td>
+                                            <td class="mailbox-name"><a href="/Contact/GetContactDetails/@item.ContactID">@item.UserMail</a></td>
                                             <td class="mailbox-subject">
-                                                <b>@item.Subject</b> - @item.MessageContent.Substring(0, item.MessageContent.Substring(0, 15).LastIndexOf(" "))...
+                                                <b>@item.Subject</b> - @item.Message.Substring(0, item.Message.Substring(0, 15).LastIndexOf(" "))...
                                             </td>
                                             <td class="mailbox-attachment"></td>
-                                            <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
+                                            <td class="mailbox-date">@(((DateTime)item.ContactDate).ToString("dd-MMM-yyyy"))</td>
 
                                         </tr>
                                     }
@@ -101,7 +107,7 @@
                     </div>
                     <!-- /.card-body -->
                     <div class="card-footer p-0">
-                        
+
                     </div>
                 </div>
                 <!-- /.card -->
@@ -113,4 +119,6 @@
 
 </body>
 </html>
-<script src="~/AdminLTE-3.0.4/plugins/jquery/jquery.min.js"></script>
+
+
+

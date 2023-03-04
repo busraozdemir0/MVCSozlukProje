@@ -39,8 +39,12 @@ namespace MVCProjeKamp.Controllers
         [HttpPost]
         public ActionResult HomePage(Contact contact)
         {
-            contact.ContactDate= DateTime.Parse(DateTime.Now.ToShortDateString());
-            cm.ContactAdd(contact);
+            if(ModelState.IsValid)
+            {
+                contact.ContactDate = DateTime.Parse(DateTime.Now.ToShortDateString());
+                cm.ContactAdd(contact);
+                return RedirectToAction("HomePage","Home");
+            }           
             return View();
         }
     }

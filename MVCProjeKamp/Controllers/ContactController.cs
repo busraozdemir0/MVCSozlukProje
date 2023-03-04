@@ -38,5 +38,16 @@ namespace MVCProjeKamp.Controllers
             cm.ContactDelete(deleteID);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult ContactSearch()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult ContactSearch(string p)
+        {
+            var values = cm.GetListSearch(p);
+            return View(values);
+        }
     }
 }

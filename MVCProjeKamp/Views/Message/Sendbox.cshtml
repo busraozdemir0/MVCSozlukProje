@@ -31,15 +31,19 @@
                     <div class="card-header">
                         <h3 class="card-title">Gönderilen Mesajlar</h3>
                         <div class="card-tools">
-                            <div class="input-group input-group-sm">
-                                <input type="text" class="form-control" placeholder="Mail Kutusunda Ara">
-                                <div class="input-group-append">
-                                    <div class="btn btn-primary">
-                                        <i class="fas fa-search"></i>
+                            @using (Html.BeginForm("MessageSearch", "Message", FormMethod.Post))
+                            {
+                                <div class="input-group input-group-sm">
+                                    @*<input type="text" class="form-control" placeholder="Mail Kutusunda Ara">*@
+                                    @Html.TextBox("p")
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-primary">
+                                            <i class="fas fa-search"></i>
+                                        </button>
                                     </div>
                                 </div>
+                            }
                             </div>
-                        </div>
                         <!-- /.card-tools -->
                     </div>
                     <!-- /.card-header -->
@@ -72,12 +76,13 @@
                                     @foreach (var item in Model)
                                     {
                                         <tr>
-                                            <td>
+                                            @*<td>
                                                 <div class="icheck-primary">
                                                     <input type="checkbox" value="" id="check1">
                                                     <label for="check1"></label>
                                                 </div>
-                                            </td>
+                                            </td>*@
+                                            <td>  <a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></a></td>
                                             <td class="mailbox-star"><a href="/Message/GetSendboxMessageDetails/@item.MessageID"><i class="fas fa-star text-warning"></i></a></td>
                                             <td class="mailbox-name"><a href="/Message/GetSendboxMessageDetails/@item.MessageID">@item.ReceiverMail</a></td>
                                             <td class="mailbox-subject">
@@ -85,7 +90,7 @@
                                             </td>
                                             <td class="mailbox-attachment"></td>
                                             <td class="mailbox-date">@(((DateTime)item.MessageDate).ToString("dd-MMM-yyyy"))</td>
-                                            <td>  <a href="/Message/DeleteMessage/@item.MessageID" class="btn btn-default btn-sm"><i class="far fa-trash-alt"></i></a></td>
+
 
                                         </tr>
                                     }

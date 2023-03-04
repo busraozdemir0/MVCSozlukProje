@@ -23,6 +23,11 @@ namespace BusinessLayer.Concrete
             return _messageDal.Get(x => x.MessageID == id);
         }
 
+        public List<Message> GetList(string p)
+        {
+            return _messageDal.List(x => x.Subject.Contains(p));
+        }
+
         public List<Message> GetListInbox(string p)
         {
             return _messageDal.List(x => x.ReceiverMail == p);

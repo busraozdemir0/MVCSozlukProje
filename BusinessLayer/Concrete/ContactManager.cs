@@ -1,5 +1,6 @@
 ﻿using BusinessLayer.Abstract;
 using DataAccessLayer.Abstract;
+using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -41,6 +42,11 @@ namespace BusinessLayer.Concrete
         public List<Contact> GetList()
         {
             return _contactDal.List();
+        }
+
+        public List<Contact> GetListSearch(string p)
+        {
+            return _contactDal.List(x => x.Subject.Contains(p));
         }
     }
 }
