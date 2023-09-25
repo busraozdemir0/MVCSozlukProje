@@ -2123,6 +2123,15 @@
     <Content Include="AdminLTE-3.0.4\vitrin\js\jquery.waypoints.min.js" />
     <Content Include="AdminLTE-3.0.4\vitrin\js\move-top.js" />
     <Content Include="AdminLTE-3.0.4\vitrin\js\simpleLightbox.js" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\Adminpanelyazarlar.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\Başlıkraporlaması.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\Galeri.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\mailsayfası.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\sözlüksayfası.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\Tümbaşlıklar.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\Yazarpanelgiriş.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\yazarpanelibaşlıklar.png" />
+    <Content Include="AdminLTE-3.0.4\vitrin\projegörsel\yetkilendirme.png" />
     <Content Include="AdminLTE-3.0.4\vitrin\w3layouts-license.txt" />
     <Content Include="AdminLTE-3.0.4\vitrin\webfonts\fa-brands-400.svg" />
     <Content Include="AdminLTE-3.0.4\vitrin\webfonts\fa-regular-400.svg" />
