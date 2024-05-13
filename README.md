@@ -6,11 +6,11 @@ Entity Framework Code First yaklaşımı kullanılarak dinamik bir şekilde veri
 ###
 
 # Kullanılan Teknolojiler
-  - ASP.NET MVC 6.0
+  - ASP.NET MVC
+  - Entity Framework
   - MS SQL Server
   - Repository Tasarım Deseni
   - N-Tier-Architecture
-  - Entity Framework
   - Code First
   - LINQ
   - HTML
@@ -25,7 +25,7 @@ Entity Framework Code First yaklaşımı kullanılarak dinamik bir şekilde veri
   - Admin ve Yazar girişlerin ayrılması.
   - Arama yaparak filtreleme özelliği.
   - Mesajlaşma yapısı.
-  - 'A' rolüne sahip admin kullanıcısı sistemde birçok şeye erişim sağlamaktadır.
+  - 'A' rolüne sahip admin kullanıcısı sistemde birçok şeye erişim sağlayabilmektedir.
   - Rol ataması
   - CRUD işlemleri
 
