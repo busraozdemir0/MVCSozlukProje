@@ -1,4 +1,35 @@
 # Sözlük Projesi Web Sitesi
+## Projenin Temel Amacı
+###
+MVCSözlük Projesi; Ekşi Sözlük sitesi mantığıyla kullanıcılara yazar paneli vasıtasıyla başlık oluşturma ve yorum yapma imkanı sunan, aynı zamanda kullanıcıların birbirleriyle iletişim kurmalarını sağlayan bir sistemdir. 
+Entity Framework Code First yaklaşımı kullanılarak dinamik bir şekilde veri tabanı yönetimi sağlanmıştır. N katmanlı mimari yapısı kullanılarak CRUD işlemleri daha düzenli ve basit hale getirilmiştir.
+###
+
+# Kullanılan Teknolojiler
+  - ASP.NET MVC 6.0
+  - MS SQL Server
+  - Repository Tasarım Deseni
+  - N-Tier-Architecture
+  - Entity Framework
+  - Code First
+  - LINQ
+  - HTML
+  - CSS
+  - Bootstrap
+  - Responsive Tasarım
+
+# Öne Çıkan Özellikleri
+  - Asp.Net Session ile oturum açma özelliği.
+  - Admin Paneli, Yazar Paneli, Vitrin Paneli.
+  - Rolleme ile panele erişim kısıtlaması.
+  - Admin ve Yazar girişlerin ayrılması.
+  - Arama yaparak filtreleme özelliği.
+  - Mesajlaşma yapısı.
+  - 'A' rolüne sahip admin kullanıcısı sistemde birçok şeye erişim sağlamaktadır.
+  - Rol ataması
+  - CRUD işlemleri
+
+# Sitenin Görselleri
 
 ### Ana Sayfa Ekran Görüntüleri
 
