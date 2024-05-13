@@ -18,7 +18,7 @@ Entity Framework Code First yaklaşımı kullanılarak dinamik bir şekilde veri
   - Bootstrap
   - Responsive Tasarım
 
-# Öne Çıkan Özellikleri
+# Temel Özellikler
   - Asp.Net Session ile oturum açma özelliği.
   - Admin Paneli, Yazar Paneli, Vitrin Paneli.
   - Rolleme ile panele erişim kısıtlaması.
